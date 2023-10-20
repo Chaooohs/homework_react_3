@@ -1,0 +1,28 @@
+.list__wrap {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin: 50px auto 0;
+}
+
+.list__item {
+  align-items: center;
+}
+
+.list__text {
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  outline: none;
+}
+
+.list__text.completed {
+  text-decoration: line-through;
+  color: #b1b1b1;
+}
+
+.list__buttons {
+  display: flex;
+}

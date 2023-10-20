@@ -1,0 +1,24 @@
+.enter {
+  display: none;
+}
+
+.enter.open {
+  display: flex;
+}
+
+.enter__wrap {
+  height: 36px;
+}
+
+.enter__input {
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid black;
+  width: 90%;
+}
+
+.enter__icon {
+  width: 36px;
+}

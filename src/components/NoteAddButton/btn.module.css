@@ -1,0 +1,21 @@
+.button {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn__add {
+  composes: button;
+  width: 50px;
+  display: flex;
+  margin: 35px auto;
+}
+
+.btn__list {
+  composes: button;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
