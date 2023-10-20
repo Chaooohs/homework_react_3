@@ -33,19 +33,19 @@ function NoteList({ item, onDoneBtn, onRemoveBtn, onSetItem }) {
   return (
     <div className="list__wrap">
       {
-        item.map((item) => (
+        item.map((item, index) => (
           <Item className="list__item" key={item.id}>
             {
               edit === item.id ?
                 <>
-                  <input className='enter__input' value={value} onChange={(e) => setValue(e.target.value)}></input>
+                  <input className='enter__input' value={value} onChange={(e) => setValue(e.target.value)} onKeyUpCapture={(e) => e.code === 'Enter' || e.code === 'NumpadEnter' ? saveBtnHandler(item.id) : null}></input>
                   <button type="button" className={styles.btn__list} onClick={() => saveBtnHandler(item.id)}>
                     <img src={save} alt="save"></img>
                   </button>
                 </>
                 :
                 <>
-                  <div className={`list__text ${item.completed ? "completed" : ''}`}>{item.note}</div>
+                  <div className={`list__text ${item.completed ? "completed" : ''}`}>{(index + 1) + '. ' + item.note}</div>
                   <div className='list__buttons'>
                     <button type="button" className={styles.btn__list} onClick={() => onRemoveBtn(item.id)}>
                       <img src={del} alt="del"></img>
