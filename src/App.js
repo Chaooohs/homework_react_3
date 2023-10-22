@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useLocalStorage} from './hooks/useLocalStorage'
 
 import { NoteAddButton } from "./components/NoteAddButton/NoteAddButton";
 import NoteInput from "./components/NoteInput/NoteInput";
@@ -9,7 +9,7 @@ const all = (selectorAll) => document.querySelectorAll(selectorAll);
 
 function App() {
 
-  const [item, setItem] = useState([])
+  const [item, setItem] = useLocalStorage([], 'local')
 
   const setInputHandler = (input) => {
     setItem((prevItem) => {
@@ -29,6 +29,8 @@ function App() {
   const removeBtnHandler = (id) => {
     setItem(item.filter((item) => id !== item.id))
   }
+
+  // localStorage.setItem('key', JSON.stringify(item))
 
   return (
     <>
