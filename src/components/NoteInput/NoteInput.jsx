@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 
 import Item from '../UI/Item'
 import './NoteInput.css'
@@ -8,7 +8,7 @@ import save from '../../img/save-button.png'
 const el = (selector) => document.querySelector(selector);
 
 
-function NoteInput({ onSetInput }) {
+const NoteInput = forwardRef(({ onSetInput }, ref) => {
 
   const [inputNote, setNote] = useState('')
 
@@ -36,7 +36,16 @@ function NoteInput({ onSetInput }) {
     <>
       <div className='enter__wrap'>
         <Item className="enter">
-          <input type="text" className="enter__input" placeholder='shopping list' value={inputNote} onChange={changeInputHandler} onKeyUpCapture={(e) => e.code === 'Enter' || e.code === 'NumpadEnter' ? setInputHandler() : null}></input>
+          <input
+            ref={ref}
+            type="text"
+            className="enter__input"
+            placeholder='shopping list'
+            value={inputNote}
+            onChange={changeInputHandler}
+            onKeyUpCapture={(e) => e.code === 'Enter' || e.code === 'NumpadEnter' ? setInputHandler() : null}
+          >
+          </input>
           <button type="button" className={styles.button} onClick={setInputHandler}>
             <img src={save} alt="save" className='enter__icon'></img>
           </button>
@@ -44,6 +53,6 @@ function NoteInput({ onSetInput }) {
       </div>
     </>
   )
-}
+})
 
 export default NoteInput
