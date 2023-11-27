@@ -5,6 +5,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #b2b2b2;
 }
 
 img {
@@ -12,6 +13,17 @@ img {
 }
 
 .one {
+  width: 100%;
+  max-width: 1024px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.wrap {
+  flex: 1 1 auto;
   box-sizing: border-box;
   padding: 0 15px;
+  background-color: #fff;
 }

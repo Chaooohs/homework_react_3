@@ -39,12 +39,12 @@ function App() {
   }
 
   return (
-    <>
+    <div className='wrap'>
       <NoteAddButton addNoteHandler={addNoteHandler}></NoteAddButton>
       <NoteInput onSetInput={setInputHandler} ref={ref}></NoteInput>
       <NoteList item={item} onDoneBtn={doneBtnHandler} onRemoveBtn={removeBtnHandler}
         onSetItem={setItem}></NoteList>
-    </>
+    </div>
   );
 };
 
